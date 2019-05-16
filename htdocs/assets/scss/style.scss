@@ -39,9 +39,10 @@ body{
 
 }
 
-.card{
+.cards{
     background-color: red;
-    height: 400px;
+    margin-top: 200px;
+    margin-left: 40px;
     &-img{
         background-color: aqua;
     }

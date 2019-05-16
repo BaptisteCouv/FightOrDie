@@ -3,8 +3,8 @@ session_start();
 include '../layout/bdd.php';
 
 
-require '../partials/character.php';
-require '../partials/warrior.php';
+require '../partials/card.php';
+
 
 
 ?>
@@ -21,25 +21,22 @@ require '../partials/warrior.php';
     <title>Fight Or Die</title>
 </head>
 <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <?php
 
-<div class="container">
-    <div class="row">
-        <div class="card col-">
-            <div class="card-img">
-                <img src="../assets/img/warrior.gif" alt="">
-            </div>
-            <div class="card-text">
-                a
-            </div>
-            <div class="card-choix">
-                a
-            </div>
+            $cardArcher= new Card(Card::ARCHER);
+            $cardArcher->afficherCard();
+
+            $cardWarrior= new Card(Card::WARRIOR);
+            $cardWarrior->afficherCard();
+
+            $cardwizzard= new Card(Card::WIZZARD);
+            $cardwizzard->afficherCard();
+
+            ?>
         </div>
     </div>
-</div>
-
-
-
 </body>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
