@@ -38,3 +38,20 @@ body{
         }
 
 }
+
+.card{
+    background-color: red;
+    height: 400px;
+    &-img{
+        background-color: aqua;
+    }
+
+    &-text{
+        background-color: blue;
+    }
+
+    &-choix{
+        background-color: sienna;
+    }
+}
+

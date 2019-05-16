@@ -7,8 +7,18 @@ class Character
     protected $class;
     protected $strength;
 
-    public function attack()
+    public function attack($target)
     {
-        
+        // this strength enleve this healthPoint de l'adveseraire
+    }
+
+    private function takeDamage($dammage)
+    {
+    //this heathlPoints de notre perso - dammage (=strength de l'adversaire)   //
+    }
+
+    private function deleteIfDie()
+    {
+        // if this healthPoints = 0, you loose and you are deleted from the earth   //lol
     }
 }
