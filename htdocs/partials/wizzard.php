@@ -2,30 +2,43 @@
 
 class Wizzard extends Character 
 {
-    public function __construct($name, $class)
+    private $heal = 3;
+    
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->class = $class;
-    } 
+        $this->setStrength();
+        $this->setHealthPoints();
+        $this->setDefense();
+    }
+
+    protected function bonus()
+    {
+        if($this->lucky = true){
+            $this->healthPoints += $this->heal;
+            echo 'BONUS WIZZARD <br>';
+        }
+    }
 
     public function setName($name)
-    {
+    { 
         $this->name = $name;
         
     }
 
-    public function setClass($class)
+    private function setStrength()
     {
-        $this->class = $class;
-        
+        $this->strength = 15;
     }
 
-    private function takeDammage()
+    private function setHealthPoints()
     {
-       //Prends des dégats supp selon la class de la target //
+        $this->healthPoints = 80;
     }
 
-    public function name(){
-        echo $this->name;
+    private function setDefense()
+    {
+        $this->defense = 0;
     }
+
 }

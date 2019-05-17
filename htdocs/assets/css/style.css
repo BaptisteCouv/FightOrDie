@@ -66,4 +66,23 @@
   background-color: green;
 }
 
+.cardArene {
+  border-radius: 6px;
+  margin-top: 200px;
+  margin-left: 40px;
+  margin-bottom: 100px;
+  margin: 220px;
+}
+.cardArene-img {
+  padding: 10px;
+  max-height: 400px;
+  max-width: 400px;
+  text-align: center;
+}
+.cardArene-text {
+  font-size: 40px;
+  font-family: "Ceviche One", cursive;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -2,11 +2,24 @@
 
 class Archer extends Character 
 {
-    public function __construct($name, $class)
+    private $dodge = 3;
+
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->class = $class;
-    } 
+        $this->setStrength();
+        $this->setHealthPoints();
+        $this->setDefense();
+
+    }
+
+    protected function bonus()
+    {
+        if($this->lucky = true){
+            $this->healthPoints += $this->dodge;
+            echo 'bonus archer';
+        }
+    }
 
     public function setName($name)
     {
@@ -14,17 +27,25 @@ class Archer extends Character
         
     }
 
-    public function setClass($class)
+    private function setStrength()
     {
-        $this->class = $class;
+        $this->strength = 20;
     }
 
+    private function setHealthPoints()
+    {
+        $this->healthPoints = 60;
+    }
+
+    private function setDefense()
+    {
+        $this->defense = 0;
+    }
+    
     private function takeDammage()
     {
-       //Prends des dégats supp selon la class de la target //
+      //Prends des dégats supp selon la class de la target //
     }
 
-    public function name(){
-        echo $this->name;
-    }
+
 }

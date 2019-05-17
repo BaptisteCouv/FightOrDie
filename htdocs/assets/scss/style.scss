@@ -68,3 +68,45 @@
         }
 }
 
+.cardArene{
+    border-radius: 6px;
+    margin-top: 200px;
+    margin-left: 40px;
+    margin-bottom: 100px;
+    margin: 220px;
+    &-img{
+        padding: 10px;
+        max-height: 400px;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    &-text{
+        font-size: 40px;
+        font-family: 'Ceviche One', cursive;
+        text-align: center;
+    }
+
+    // &-icon-heart{
+    //     text-align: center;
+    //     margin-top: 100px;
+    // }
+
+    // &-icon-img{
+    //     position: relative;
+    //     z-index: 30;
+    //     max-height: 130px;
+    //     max-width: 130px;
+    // }
+
+    // &-num{
+    //     z-index: 40;
+    //     position: absolute;
+    //     margin-left: 70px;
+    //     margin-top: 50px;
+    //     font-size: 30px;
+    //     color: aliceblue;
+    //     text-align: center;
+    // }
+}
+
