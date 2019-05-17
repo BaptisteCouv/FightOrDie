@@ -1,8 +1,12 @@
-body {
+#connexion-body {
   background: url("../img/background.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+#main-body {
+  background-color: black;
 }
 
 .formulaire {
@@ -19,7 +23,7 @@ body {
   text-decoration: none;
 }
 .but-case {
-  background-color: #4CAF50;
+  background-color: grey;
   /* Green */
   border: none;
   color: white;
@@ -39,18 +43,27 @@ body {
 }
 
 .cards {
-  background-color: red;
+  background-color: white;
+  border-radius: 6px;
   margin-top: 200px;
   margin-left: 40px;
 }
 .cards-img {
-  background-color: aqua;
+  padding: 10px;
+  max-height: 400px;
+  max-width: 400px;
 }
 .cards-text {
-  background-color: blue;
+  font-size: 40px;
+  font-family: "Ceviche One", cursive;
+  text-align: center;
 }
 .cards-choix {
-  background-color: sienna;
+  text-align: center;
+  margin: 10px;
+}
+.cards:hover {
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */

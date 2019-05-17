@@ -11,7 +11,7 @@
     <title>FightOrDie</title>
 </head>
 
-<body>
+<body id="connexion-body"> 
     <!-- <audio controls autoplay>
         <source  src="../assets/music/bonny.mp3" type="audio/m">
         <source src="../assets/music/bonny.mp3" type="audio/ogg">

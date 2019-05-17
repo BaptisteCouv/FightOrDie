@@ -20,27 +20,17 @@ class Card {
             $this->class = $class;
         }
     }
-
     public function setImg()
     {
-        if ($this->class =='Archer'){
-            $this->imgPath = "../assets/img/archer.gif";
-        }else if ($this->class =='Warrior'){
-            $this->imgPath = "../assets/img/warrior.gif";
-        }else if ($this->class =='Wizzard'){
-            $this->imgPath = "../assets/img/wizzard.gif";
-        }else{
-            echo "comment t'es arrivé la";
-        }
+        $this->imgPath = "../assets/img/".lcfirst($this->class).".gif";
+
     }
-
-
     public function afficherCard()
     {
         echo '
                 <div class="cards col-">
                     <div class="cards-img">
-                        <img src=' . $this->imgPath . ' alt="">
+                        <img class="cards-img" src=' . $this->imgPath . ' alt="">
                     </div>
                     <div class="cards-text">
                     '. $this->class .'
@@ -48,7 +38,7 @@ class Card {
                     <div class="cards-choix">
                         <form action="arene.php" method="post">
                             <input type="hidden" name="class" value="'. $this->class .'">
-                            <button type="submit">Valider</button>
+                            <button type="submit" class="but-case">Selectionner</button>
                         </form>
                     </div>
                 </div>

@@ -1,9 +1,12 @@
-body{
+#connexion-body{
     background: url('../img/background.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
 
+#main-body{
+    background-color: black;
 }
 
 .formulaire{
@@ -19,7 +22,7 @@ body{
     color: white;
     text-decoration: none;
     &-case{
-        background-color: #4CAF50; /* Green */
+        background-color: grey; /* Green */
         border: none;
         color: white;
         padding: 10px 20px;
@@ -40,19 +43,28 @@ body{
 }
 
 .cards{
-    background-color: red;
+    background-color: white;
+    border-radius: 6px;
     margin-top: 200px;
     margin-left: 40px;
     &-img{
-        background-color: aqua;
+        padding: 10px;
+        max-height: 400px;
+        max-width: 400px;
     }
 
     &-text{
-        background-color: blue;
+        font-size: 40px;
+        font-family: 'Ceviche One', cursive;
+        text-align: center;
     }
 
     &-choix{
-        background-color: sienna;
-    }
+        text-align: center;
+        margin: 10px;
+    }   
+        &:hover{
+            background-color: green;
+        }
 }
 

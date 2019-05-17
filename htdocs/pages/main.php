@@ -20,8 +20,8 @@ require '../partials/card.php';
     <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
     <title>Fight Or Die</title>
 </head>
-<body>
-    <div class="container">
+<body id="main-body">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <?php
 

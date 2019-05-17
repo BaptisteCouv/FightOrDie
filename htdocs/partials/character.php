@@ -6,8 +6,11 @@ class Character
     protected $healthPoints;
     protected $class;
     protected $strength;
+    protected $defense;
+    protected $critical = 5;
 
-    public function attack($target)
+
+    public function attack(Character $target)
     {
         // this strength enleve this healthPoint de l'adveseraire
     }
@@ -21,4 +24,5 @@ class Character
     {
         // if this healthPoints = 0, you loose and you are deleted from the earth   //lol
     }
+
 }
