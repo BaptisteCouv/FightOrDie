@@ -10,6 +10,7 @@ class Wizzard extends Character
         $this->setStrength();
         $this->setHealthPoints();
         $this->setDefense();
+        $this->setTotalStrength();
     }
 
     protected function bonus()
@@ -33,12 +34,22 @@ class Wizzard extends Character
 
     private function setHealthPoints()
     {
-        $this->healthPoints = 80;
+        if(!isset($_SESSION['persoHealthPoints'])){
+            $this->healthPoints = 80;
+        }else{
+            $this->healthPoints = $_SESSION['persoHealthPoints'];
+        }
+        
     }
 
     private function setDefense()
     {
         $this->defense = 0;
     }
+    private function setTotalStrength()
+    {
+        $this->totalStrength = $this->strength;
+    }
+
 
 }

@@ -2,54 +2,42 @@
 include '../layout/bdd.php';
 
 session_start();
-$class = $_POST['class'];
-//on choisit la class aléatoirement du bot(adversaire)
 
-$listClass = array('Warrior', 'Archer', 'Wizzard');
-$randClassBot = array_rand($listClass, 1);
 
-//faut créer le personnage choisi par le joueur
+//infos en session du perso
+$perso = $_SESSION['perso'];
+$classPerso= $_SESSION['classPerso'];
+$persoHealthPoints = $_SESSION['persoHealthPoints'];
+$persoTotalStrength = $_SESSION['persoTotalStrength'];
+$persoDefense = $_SESSION['persoDefense'];
 
-function changerClass($class){
-    require "../partials/".lcfirst($class) . ".php";
+//infos en session du perso Bot
+$persoBot = $_SESSION['persoBot'];
+$classPersoBot = $_SESSION['classPersoBot'];
+$persoBotHealthPoints = $_SESSION['persoBotHealthPoints'];
+$persoBotTotalStrength = $_SESSION['persoBotTotalStrength'];
+$persoBotDefense = $_SESSION['persoBotDefense'];
+
+
+function chargerClass($class)
+{
+    require "../partials/" . lcfirst($class) . ".php";
 }
+spl_autoload_register('chargerClass');
 
-spl_autoload_register('changerClass');
-//Création des deux perosnnages (le joueur et le bot)
-$perso1 = new $class($_SESSION['pseudo'], $class);
-$persoBot = new $listClass[$randClassBot]('Musumashi Miyamoto', $listClass[$randClassBot]);
-echo $perso1->getClass();
-echo '<br>';
-echo $persoBot->getClass();
-echo'<br>';
-echo'<br>';
-echo'<br>';
-echo'<br>';
-echo'<br>';
-echo'<br>';
-$perso1->attack($persoBot);  
-$perso1->takeDamage($persoBot);
-$perso1->resultat($persoBot);
-$perso1->deleteIfDie();
-$persoBot->deleteIfDie();
+//Création à nouveau de l'objet personnage avec les infos en session
+$perso = new $classPerso($_SESSION['pseudo']);
 
 
-$perso1->attack($persoBot);
-$perso1->takeDamage($persoBot);
-$perso1->resultat($persoBot);
-$perso1->deleteIfDie();
-$persoBot->deleteIfDie();
-
-
-
-//faut ajouter toutes les infos dans la bdd (le perso choisit par le joueur)
-
+//création à nouveau de l'objet perso Bot avec les infos en session
+$persoBot = new $_SESSION['classPersoBot']('Musumashi Miyamoto', $_SESSION['classPersoBot']);
 
 
 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,23 +45,25 @@ $persoBot->deleteIfDie();
     <link rel="stylesheet" href="../assets/css/falling_leaves.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     <title>Arène</title>
 </head>
-<body>
+
+<body id="body-arene">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <?php
 
-            $cardPlayer= new CardArene($perso1->getClass());
+            $cardPlayer = new CardArene($perso->getClass(), $perso->getHealthPoints(), $perso->getDefense(), $perso->getTotalStrength());
             $cardPlayer->afficherCardArene();
 
-            $cardBot= new CardArene($persoBot->getClass());
+            $cardBot = new CardArene($persoBot->getClass(), $persoBot->getHealthPoints(), $persoBot->getDefense(), $persoBot->getTotalStrength());
             $cardBot->afficherCardArene();
-
-            $bouton = new CardArene($perso1->getClass());
-            $bouton->afficherBouton();
-
-            
+            ?>
+        </div>
+        <div class="row justify-content-center">
+            <?php
+                $cardPlayer->afficherBouton();
             ?>
         </div>
     </div>
@@ -83,5 +73,5 @@ $persoBot->deleteIfDie();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="../assets/js/script.js"></script>
 </html>

@@ -22,7 +22,11 @@ require '../partials/card.php';
 </head>
 <body id="main-body">
     <div class="container-fluid">
+        <div class="title-choice">
+            <p>Choisie ton héro pour combattre !</p>
+        </div>
         <div class="row justify-content-center">
+            
             <?php
 
             $cardArcher= new Card(Card::ARCHER);

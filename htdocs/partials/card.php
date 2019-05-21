@@ -36,7 +36,7 @@ class Card {
                     '. $this->class .'
                     </div>
                     <div class="cards-choix">
-                        <form action="arene.php" method="post">
+                        <form action="../layout/traitementChoixPersonnage.php" method="post">
                             <input type="hidden" name="class" value="'. $this->class .'">
                             <button type="submit" class="but-case">Selectionner</button>
                         </form>

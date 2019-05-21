@@ -1,12 +1,22 @@
 #connexion-body {
-  background: url("../img/background.jpg");
+  background: url("../img/fond-choix.gif");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
 #main-body {
-  background-color: black;
+  background: url("../img/fond-choix.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#body-arene {
+  background: url("../img/fond-arene.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .formulaire {
@@ -23,7 +33,7 @@
   text-decoration: none;
 }
 .but-case {
-  background-color: grey;
+  background-color: #899E4C;
   /* Green */
   border: none;
   color: white;
@@ -42,11 +52,20 @@
   text-decoration: none;
 }
 
+.title-choice {
+  font-size: 75px;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Ceviche One", cursive;
+  text-shadow: black 1px 0 10px;
+}
+
 .cards {
-  background-color: white;
   border-radius: 6px;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 40px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.8), 0 10px 10px rgba(0, 0, 0, 0.8);
 }
 .cards-img {
   padding: 10px;
@@ -57,32 +76,59 @@
   font-size: 40px;
   font-family: "Ceviche One", cursive;
   text-align: center;
+  text-shadow: black 1px 0 10px;
+  color: white;
 }
 .cards-choix {
   text-align: center;
   margin: 10px;
 }
 .cards:hover {
-  background-color: green;
+  background-color: white;
 }
 
 .cardArene {
   border-radius: 6px;
-  margin-top: 200px;
-  margin-left: 40px;
-  margin-bottom: 100px;
-  margin: 220px;
+  margin: 100px;
 }
 .cardArene-img {
+  margin-top: 100px;
   padding: 10px;
   max-height: 400px;
   max-width: 400px;
   text-align: center;
 }
 .cardArene-text {
+  margin-top: 20px;
   font-size: 40px;
   font-family: "Ceviche One", cursive;
   text-align: center;
+}
+
+.icon {
+  max-width: 90px;
+  max-height: 90px;
+  margin: 10px;
+  margin: auto;
+}
+
+.icon-img {
+  z-index: 30;
+  position: absolute;
+  max-width: 90px;
+  max-height: 90px;
+}
+
+#icon-p {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 40;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  text-shadow: black 1px 0 13px;
 }
 
 /*# sourceMappingURL=style.css.map */

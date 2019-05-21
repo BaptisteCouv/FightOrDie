@@ -10,6 +10,7 @@ class Warrior extends Character
         $this->setStrength();
         $this->setHealthPoints();
         $this->setDefense();
+        $this->setTotalStrength();
     } 
 
     protected function bonus()
@@ -34,11 +35,22 @@ class Warrior extends Character
 
     private function setHealthPoints()
     {
-        $this->healthPoints = 100;
+        if(!isset($_SESSION['persoHealthPoints'])){
+            $this->healthPoints = 100;
+        }else{
+            $this->healthPoints = $_SESSION['persoHealthPoints'];
+        }
+        
     }
 
     private function setDefense()
     {
         $this->defense = 20;
     }
+
+    private function setTotalStrength()
+    {
+        $this->totalStrength = $this->strength;
+    }
+
 }

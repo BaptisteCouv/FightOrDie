@@ -44,7 +44,7 @@ class Character
         $this->healthPoints = $this->healthPoints - $target->totalStrength;
     }
 
-    public function resultat(Character $target)
+/*     public function resultat(Character $target)
     {
         echo $this->getClass() . ' : ' . $this->name . ' a infligé ' . $this->totalStrength . ' de dégats';
         echo '<br>';
@@ -57,7 +57,7 @@ class Character
         echo $target->getClass() . ' : ' . $target->name . ' a infligé ' . $target->totalStrength;
         echo '<br>';
         echo '<br>';
-    }
+    } */
 
     public function deleteIfDie()
     {
@@ -71,5 +71,21 @@ class Character
     public function getClass()
     {
         return get_class($this);
+    }
+
+    public function getHealthPoints()
+    {
+        return $this->healthPoints;
+    }
+
+    public function getTotalStrength()
+    {
+        
+        return $this->totalStrength;
+    }
+
+    public function getDefense()
+    {
+        return $this->defense;
     }
 }

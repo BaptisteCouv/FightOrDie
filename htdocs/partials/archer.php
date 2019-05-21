@@ -10,6 +10,7 @@ class Archer extends Character
         $this->setStrength();
         $this->setHealthPoints();
         $this->setDefense();
+        $this->setTotalStrength();
 
     }
 
@@ -34,7 +35,11 @@ class Archer extends Character
 
     private function setHealthPoints()
     {
-        $this->healthPoints = 60;
+        if(!isset($_SESSION['persoHealthPoints'])){
+            $this->healthPoints = 60;
+        }else{
+            $this->healthPoints = $_SESSION['persoHealthPoints'];
+        }
     }
 
     private function setDefense()
@@ -42,9 +47,9 @@ class Archer extends Character
         $this->defense = 0;
     }
     
-    private function takeDammage()
+    private function setTotalStrength()
     {
-      //Prends des dégats supp selon la class de la target //
+        $this->totalStrength = $this->strength;
     }
 
 
