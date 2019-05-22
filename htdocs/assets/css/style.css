@@ -71,6 +71,13 @@
   padding: 10px;
   max-height: 400px;
   max-width: 400px;
+  overflow: hidden;
+  transform: translatey(0px);
+  animation: float 2s ease-in-out infinite;
+}
+.cards-img img {
+  width: 100%;
+  height: auto;
 }
 .cards-text {
   font-size: 40px;
@@ -97,6 +104,15 @@
   max-height: 400px;
   max-width: 400px;
   text-align: center;
+  position: relative;
+  z-index: 30;
+  overflow: hidden;
+  transform: translatey(0px);
+  animation: float 2s ease-in-out infinite;
+}
+.cardArene-img img {
+  width: 100%;
+  height: auto;
 }
 .cardArene-text {
   margin-top: 20px;
@@ -119,7 +135,9 @@
   max-height: 90px;
 }
 
-#icon-p {
+.icon-p {
+  width: 90px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -129,6 +147,46 @@
   font-size: 30px;
   font-family: "Anton", sans-serif;
   text-shadow: black 1px 0 13px;
+}
+
+#bot {
+  transform: rotateY(180deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+#poule-bot {
+  display: none;
+}
+
+#poule-player {
+  display: none;
+}
+
+.hidden-attack {
+  position: absolute;
+  z-index: 20;
+  float: left;
+  margin-top: 280px;
+  margin-left: 30px;
+}
+
+#hidden-attack-bot {
+  width: 200px;
+  height: 150px;
+}
+#hidden-attack-player {
+  width: 200px;
+  height: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */

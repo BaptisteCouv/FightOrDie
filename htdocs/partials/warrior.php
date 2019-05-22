@@ -17,7 +17,6 @@ class Warrior extends Character
     {
         if($this->lucky = true){
             $this->defense += $this->shield;
-            echo 'BONUS WARRIOR';
         }
 
     }
@@ -28,12 +27,12 @@ class Warrior extends Character
         
     }
 
-    private function setStrength()
+    public function setStrength()
     {
         $this->strength = 10;
     }
 
-    private function setHealthPoints()
+    public function setHealthPoints()
     {
         if(!isset($_SESSION['persoHealthPoints'])){
             $this->healthPoints = 100;
@@ -43,14 +42,21 @@ class Warrior extends Character
         
     }
 
-    private function setDefense()
+    public function setDefense()
     {
         $this->defense = 20;
     }
 
-    private function setTotalStrength()
+    public function setTotalStrength()
     {
         $this->totalStrength = $this->strength;
+    }
+
+    public function deleteIfDie()
+    {
+        if ($this->healthPoints <= 0) {
+            $_SESSION['persoHealthPoints'] = 100;
+        };
     }
 
 }

@@ -18,4 +18,6 @@ $persoBot = new $_SESSION['classPersoBot']('Musumashi Miyamoto');
 $perso->attack($persoBot);
 $perso->takeDamage($persoBot); 
 $_SESSION['persoHealthPoints'] = $perso->getHealthPoints();
-echo ($perso->getHealthPoints());
+echo ($perso->getHealthPoints().'|'.$persoBot->getHealthPoints());
+$perso->deleteIfDie();
+$persoBot->deleteifDie();

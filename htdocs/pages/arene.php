@@ -5,14 +5,14 @@ session_start();
 
 
 //infos en session du perso
-$perso = $_SESSION['perso'];
+
 $classPerso= $_SESSION['classPerso'];
 $persoHealthPoints = $_SESSION['persoHealthPoints'];
 $persoTotalStrength = $_SESSION['persoTotalStrength'];
 $persoDefense = $_SESSION['persoDefense'];
 
 //infos en session du perso Bot
-$persoBot = $_SESSION['persoBot'];
+
 $classPersoBot = $_SESSION['classPersoBot'];
 $persoBotHealthPoints = $_SESSION['persoBotHealthPoints'];
 $persoBotTotalStrength = $_SESSION['persoBotTotalStrength'];
@@ -55,10 +55,21 @@ $persoBot = new $_SESSION['classPersoBot']('Musumashi Miyamoto', $_SESSION['clas
             <?php
 
             $cardPlayer = new CardArene($perso->getClass(), $perso->getHealthPoints(), $perso->getDefense(), $perso->getTotalStrength());
-            $cardPlayer->afficherCardArene();
+            $cardPlayer->afficherCardArene("player");
 
             $cardBot = new CardArene($persoBot->getClass(), $persoBot->getHealthPoints(), $persoBot->getDefense(), $persoBot->getTotalStrength());
-            $cardBot->afficherCardArene();
+            $cardBot->afficherCardArene("bot");
+
+            if ($perso->getHealthPoints()<= 0){
+            $cardPlayer->afficherResultat($_SESSION['pseudo']);
+            }else {
+                echo $_SESSION['persoHealthPoints'];
+            }
+
+            if ($persoBot->getHealthPoints() <= 0){
+                $cardBot->afficherResultat('Musumashi Miyamoto');
+            }
+
             ?>
         </div>
         <div class="row justify-content-center">

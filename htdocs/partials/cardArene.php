@@ -47,12 +47,16 @@ class CardArene extends Card
     }
 
 
-    public function afficherCardArene()
+    public function afficherCardArene($f)
     {
         echo '
             <div class="cardArene">
+                <div id="poule-'. $f .'" class="hidden-attack">
+                    <img id="hidden-attack-'. $f .'" src="../assets/img/poule.png" alt="">
+                </div>
+
                 <div class="cardArene-img">
-                    <img class="cardArene-img" src=' . $this->imgPath . ' alt="">
+                    <img id="'. $f .'" class="cardArene-img" src=' . $this->imgPath . ' alt="">
                 </div>
                 <div class="cardArene-text">
                     '. $this->class .'
@@ -60,15 +64,15 @@ class CardArene extends Card
                 <div class="row">
                     <div class="icon">
                         <img src="../assets/img/heart.gif" alt="vie" class="icon-img">
-                        <p id="icon-p">'.$this->healthPoints.'</p>
+                        <p class="icon-p" id="test'. $f .'">'.$this->healthPoints.'</p>
                     </div>
                     <div class="icon">
                         <img src="../assets/img/shield.gif" alt="vie" class="icon-img">
-                        <p id="icon-p">'.$this->defense.'</p>
+                        <p class="icon-p">'.$this->defense.'</p>
                     </div>
                     <div class="icon">
                         <img src="../assets/img/fire.gif" alt="vie" class="icon-img">
-                        <p id="icon-p">'.$this->strength.'</p>
+                        <p class="icon-p">'.$this->strength.'</p>
                     </div>
                 </div>
             </div>
@@ -83,4 +87,20 @@ class CardArene extends Card
             </div>  
         ';
     }
+
+    public function afficherResultat($perso)
+    {
+        echo '
+            <div class="container">
+                <div class="row">
+                    <div class ="col-sm">
+                        <h2>WASTED ! </h2>
+                        <p>'.$perso.' est mort ! </p>
+                    </div>
+                </div>
+            </div>  
+        ';
+    }
+
+
 }   

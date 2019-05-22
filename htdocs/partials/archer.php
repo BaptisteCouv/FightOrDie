@@ -18,7 +18,6 @@ class Archer extends Character
     {
         if($this->lucky = true){
             $this->healthPoints += $this->dodge;
-            echo 'bonus archer';
         }
     }
 
@@ -28,12 +27,12 @@ class Archer extends Character
         
     }
 
-    private function setStrength()
+    public function setStrength()
     {
         $this->strength = 20;
     }
 
-    private function setHealthPoints()
+    public function setHealthPoints()
     {
         if(!isset($_SESSION['persoHealthPoints'])){
             $this->healthPoints = 60;
@@ -42,15 +41,20 @@ class Archer extends Character
         }
     }
 
-    private function setDefense()
+    public function setDefense()
     {
         $this->defense = 0;
     }
     
-    private function setTotalStrength()
+    public function setTotalStrength()
     {
         $this->totalStrength = $this->strength;
     }
 
-
+    public function deleteIfDie()
+    {
+        if ($this->healthPoints <= 0) {
+            $_SESSION['persoHealthPoints'] = 60;
+        };
+    }
 }

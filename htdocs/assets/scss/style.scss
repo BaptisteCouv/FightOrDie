@@ -16,7 +16,7 @@
     background: url('../img/fond-arene.gif');
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+     background-repeat: no-repeat;
 }
 
 .formulaire{
@@ -72,6 +72,11 @@
         padding: 10px;
         max-height: 400px;
         max-width: 400px;
+
+        overflow: hidden;
+        transform: translatey(0px);
+        animation: float 2s ease-in-out infinite;
+        img { width: 100%; height: auto; }
     }
 
     &-text{
@@ -94,12 +99,20 @@
 .cardArene{
     border-radius: 6px;
     margin: 100px;
+
     &-img{
         margin-top: 100px;
         padding: 10px;
         max-height: 400px;
         max-width: 400px;
         text-align: center;
+        position: relative;
+        z-index: 30;
+
+        overflow: hidden;
+        transform: translatey(0px);
+        animation: float 2s ease-in-out infinite;
+        img { width: 100%; height: auto; }
     }
 
     &-text{
@@ -108,29 +121,6 @@
         font-family: 'Ceviche One', cursive;
         text-align: center;
     }
-
-    // &-icon-heart{
-    //     text-align: center;
-    //     margin-top: 100px;
-    // }
-
-    // &-icon-img{
-    //     position: relative;
-    //     z-index: 30;
-    //     max-height: 110px;
-    //     max-width: 110px;
-    // }
-
-    // &-num{
-    //     z-index: 40;
-    //     position: absolute;
-    //     margin-left: 70px;
-    //     margin-top: 50px;
-    //     font-size: 30px;
-    //     color: aliceblue;
-    //     text-align: center;
-    // }
-
 }
 .icon {
     max-width: 90px;
@@ -144,10 +134,14 @@
     position: absolute;
     max-width: 90px;
     max-height: 90px;
+    
+    
 }
 
-#icon-p{
+.icon-p{
     // margin-top: 50px;
+    width: 90px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -157,4 +151,48 @@
     font-size: 30px;
     font-family: 'Anton', sans-serif;
     text-shadow:black 1px 0 13px;
+}
+
+#bot {
+    transform: rotateY(180deg);
+}
+
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+#poule-bot{
+    display: none;
+}
+#poule-player{
+    display: none;
+}
+
+
+.hidden-attack{
+    position: absolute;
+    z-index:  20;
+    float: left;
+    margin-top: 280px;
+    margin-left: 30px;
+}
+
+#hidden-attack{
+    &-bot{
+        width: 200px;
+        height: 150px;
+    }
+    &-player{
+        width: 200px;
+        height: 150px;
+    }
 }

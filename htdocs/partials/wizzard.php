@@ -16,8 +16,7 @@ class Wizzard extends Character
     protected function bonus()
     {
         if($this->lucky = true){
-            $this->healthPoints += $this->heal;
-            echo 'BONUS WIZZARD <br>';
+            $this->healthPoints = $this->healthPoints + 10;
         }
     }
 
@@ -27,12 +26,12 @@ class Wizzard extends Character
         
     }
 
-    private function setStrength()
+    public function setStrength()
     {
         $this->strength = 15;
     }
 
-    private function setHealthPoints()
+    public function setHealthPoints()
     {
         if(!isset($_SESSION['persoHealthPoints'])){
             $this->healthPoints = 80;
@@ -42,14 +41,19 @@ class Wizzard extends Character
         
     }
 
-    private function setDefense()
+    public function setDefense()
     {
         $this->defense = 0;
     }
-    private function setTotalStrength()
+    public function setTotalStrength()
     {
         $this->totalStrength = $this->strength;
     }
 
-
+    public function deleteIfDie()
+    {
+        if ($this->healthPoints <= 0) {
+            $_SESSION['persoHealthPoints'] = 80;
+        };
+    }
 }
